@@ -105,29 +105,29 @@ body { font-family: 'Figtree', sans-serif; background: #f0f4f8; overflow: hidden
 const NW = 112, NH = 48;
 
 const NODES = {
-  itsm:         { x: 580,  y: 70,   label: 'ITSM',        full: 'IT Service Management',         color: '#4f46e5', bg: '#eef2ff' },
-  esm:          { x: 940,  y: 70,   label: 'ESM',          full: 'Enterprise Service Mgmt',       color: '#4f46e5', bg: '#eef2ff' },
-  aiops:        { x: 380,  y: 220,  label: 'AIOps',        full: 'AIOps & Automation',            color: '#0369a1', bg: '#e0f2fe' },
-  alert_mgmt:   { x: 820,  y: 220,  label: 'Alert Mgmt',   full: 'Alert & Event Management',      color: '#0369a1', bg: '#e0f2fe' },
-  infra_mon:    { x: 100,  y: 400,  label: 'Infra Mon',    full: 'Infrastructure Monitoring',     color: '#047857', bg: '#ecfdf5' },
-  apm:          { x: 360,  y: 400,  label: 'APM',          full: 'App Performance Monitoring',    color: '#047857', bg: '#ecfdf5' },
-  log_mgmt:     { x: 640,  y: 400,  label: 'Log Mgmt',     full: 'Log Management & Analytics',    color: '#047857', bg: '#ecfdf5' },
-  npm:          { x: 900,  y: 400,  label: 'NMS/NPM',      full: 'Network Monitoring & Mgmt',     color: '#047857', bg: '#ecfdf5' },
-  dem:          { x: 1160, y: 400,  label: 'DEM',          full: 'Digital Experience Monitor',    color: '#047857', bg: '#ecfdf5' },
-  discovery:    { x: 180,  y: 590,  label: 'Discovery',    full: 'IT Discovery',                  color: '#b45309', bg: '#fffbeb' },
-  cmdb:         { x: 520,  y: 590,  label: 'CMDB',         full: 'CMDB & Service Mapping',        color: '#b45309', bg: '#fffbeb' },
-  itam:         { x: 840,  y: 590,  label: 'ITAM',         full: 'IT Asset Management',           color: '#b45309', bg: '#fffbeb' },
-  finops:       { x: 1160, y: 590,  label: 'FinOps',       full: 'FinOps / Cloud Cost Mgmt',      color: '#b45309', bg: '#fffbeb' },
-  cloud_mgmt:   { x: 280,  y: 770,  label: 'Cloud Mgmt',   full: 'Cloud Management',              color: '#7c3aed', bg: '#f5f3ff' },
-  net_infra:    { x: 620,  y: 770,  label: 'Net Infra',    full: 'Network Infrastructure',        color: '#7c3aed', bg: '#f5f3ff' },
-  endpoint:     { x: 960,  y: 770,  label: 'Endpoint',     full: 'Endpoint Management (UEM)',     color: '#7c3aed', bg: '#f5f3ff' },
-  siem:         { x: 180,  y: 960,  label: 'SIEM',         full: 'SIEM & Threat Detection',       color: '#be123c', bg: '#fff1f2' },
-  soar:         { x: 480,  y: 960,  label: 'SOAR',         full: 'SOAR & Incident Response',      color: '#be123c', bg: '#fff1f2' },
-  cspm:         { x: 740,  y: 960,  label: 'CSPM/VM',      full: 'Cloud & Vuln Security',         color: '#be123c', bg: '#fff1f2' },
-  edr:          { x: 1000, y: 960,  label: 'EDR/XDR',      full: 'Endpoint Detection & Response', color: '#be123c', bg: '#fff1f2' },
-  iam:          { x: 1260, y: 960,  label: 'IAM/PAM',      full: 'Identity & Access Mgmt',        color: '#be123c', bg: '#fff1f2' },
-  cicd:         { x: 420,  y: 1110, label: 'CI/CD',        full: 'CI/CD & Release Management',    color: '#0f766e', bg: '#f0fdfa' },
-  platform_eng: { x: 740,  y: 1110, label: 'Platform Eng', full: 'Platform Engineering (IDP)',    color: '#0f766e', bg: '#f0fdfa' },
+  itsm:         { x: 780,  y: 70,   label: 'ITSM',        full: 'IT Service Management',         color: '#4f46e5', bg: '#eef2ff' },
+  esm:          { x: 1140,  y: 70,   label: 'ESM',          full: 'Enterprise Service Mgmt',       color: '#4f46e5', bg: '#eef2ff' },
+  aiops:        { x: 580,  y: 220,  label: 'AIOps',        full: 'AIOps & Automation',            color: '#0369a1', bg: '#e0f2fe' },
+  alert_mgmt:   { x: 1020,  y: 220,  label: 'Alert Mgmt',   full: 'Alert & Event Management',      color: '#0369a1', bg: '#e0f2fe' },
+  infra_mon:    { x: 300,  y: 400,  label: 'Infra Mon',    full: 'Infrastructure Monitoring',     color: '#047857', bg: '#ecfdf5' },
+  apm:          { x: 560,  y: 400,  label: 'APM',          full: 'App Performance Monitoring',    color: '#047857', bg: '#ecfdf5' },
+  log_mgmt:     { x: 840,  y: 400,  label: 'Log Mgmt',     full: 'Log Management & Analytics',    color: '#047857', bg: '#ecfdf5' },
+  npm:          { x: 1100,  y: 400,  label: 'NMS/NPM',      full: 'Network Monitoring & Mgmt',     color: '#047857', bg: '#ecfdf5' },
+  dem:          { x: 1360,  y: 400,  label: 'DEM',          full: 'Digital Experience Monitor',    color: '#047857', bg: '#ecfdf5' },
+  discovery:    { x: 380,  y: 590,  label: 'Discovery',    full: 'IT Discovery',                  color: '#b45309', bg: '#fffbeb' },
+  cmdb:         { x: 720,  y: 590,  label: 'CMDB',         full: 'CMDB & Service Mapping',        color: '#b45309', bg: '#fffbeb' },
+  itam:         { x: 1040,  y: 590,  label: 'ITAM',         full: 'IT Asset Management',           color: '#b45309', bg: '#fffbeb' },
+  finops:       { x: 1360,  y: 590,  label: 'FinOps',       full: 'FinOps / Cloud Cost Mgmt',      color: '#b45309', bg: '#fffbeb' },
+  cloud_mgmt:   { x: 480,  y: 770,  label: 'Cloud Mgmt',   full: 'Cloud Management',              color: '#7c3aed', bg: '#f5f3ff' },
+  net_infra:    { x: 820,  y: 770,  label: 'Net Infra',    full: 'Network Infrastructure',        color: '#7c3aed', bg: '#f5f3ff' },
+  endpoint:     { x: 1160,  y: 770,  label: 'Endpoint',     full: 'Endpoint Management (UEM)',     color: '#7c3aed', bg: '#f5f3ff' },
+  siem:         { x: 380,  y: 960,  label: 'SIEM',         full: 'SIEM & Threat Detection',       color: '#be123c', bg: '#fff1f2' },
+  soar:         { x: 680,  y: 960,  label: 'SOAR',         full: 'SOAR & Incident Response',      color: '#be123c', bg: '#fff1f2' },
+  cspm:         { x: 940,  y: 960,  label: 'CSPM/VM',      full: 'Cloud & Vuln Security',         color: '#be123c', bg: '#fff1f2' },
+  edr:          { x: 1200,  y: 960,  label: 'EDR/XDR',      full: 'Endpoint Detection & Response', color: '#be123c', bg: '#fff1f2' },
+  iam:          { x: 1460,  y: 960,  label: 'IAM/PAM',      full: 'Identity & Access Mgmt',        color: '#be123c', bg: '#fff1f2' },
+  cicd:         { x: 620,  y: 1110, label: 'CI/CD',        full: 'CI/CD & Release Management',    color: '#0f766e', bg: '#f0fdfa' },
+  platform_eng: { x: 940,  y: 1110, label: 'Platform Eng', full: 'Platform Engineering (IDP)',    color: '#0f766e', bg: '#f0fdfa' },
 };
 
 const EDGES = [
@@ -324,15 +324,15 @@ function draw() {
   // ── LAYER 1: swim lane backgrounds ──
   LANES.forEach(function(ln) {
     ctx.save();
-    ctx.globalAlpha = 0.4;
+    ctx.globalAlpha = 0.38;
     ctx.fillStyle = ln.fill;
     drawRR(0, ln.y, 1500, ln.h, 10);
     ctx.fill();
-    ctx.globalAlpha = 0.55;
-    ctx.fillStyle = ln.tc;
-    ctx.font = 'bold 8.5px monospace';
+    ctx.globalAlpha = 1;
+    ctx.font = '500 13px Figtree, sans-serif';
     ctx.textBaseline = 'top';
-    ctx.fillText(ln.lb, 10, ln.y + 5);
+    ctx.fillStyle = ln.tc;
+    ctx.fillText(ln.lb, 14, ln.y + 8);
     ctx.restore();
   });
 
