@@ -481,11 +481,14 @@ function draw() {
 // ============================================================
 // MOUSE EVENTS
 // ============================================================
+let nodeDragHappened = false;
+
 canvas.addEventListener('mousedown', function(e) {
   e.preventDefault();
   const {x:cx, y:cy} = canvasXY(e);
   const {x:wx, y:wy} = toWorld(cx, cy);
   moved = false;
+  nodeDragHappened = false;
   const n = nodeHit(wx, wy);
   if (n) {
     iMode = 'node';
@@ -507,6 +510,7 @@ window.addEventListener('mousemove', function(e) {
     const {x:wx, y:wy} = toWorld(cx, cy);
     pos[dragId] = { x: wx - dragOX, y: wy - dragOY };
     moved = true;
+    nodeDragHappened = true;
     draw();
     return;
   }
@@ -533,32 +537,27 @@ window.addEventListener('mousemove', function(e) {
 
 window.addEventListener('mouseup', function(e) {
   const wasMoved = moved;
-  const wasMode  = iMode;
   iMode  = 'idle';
   dragId = null;
   moved  = false;
+  nodeDragHappened = false;
   canvas.style.cursor = 'default';
 
-  if (!wasMoved) {
-    // It's a click
-    const {x:cx, y:cy} = canvasXY(e);
-    const {x:wx, y:wy} = toWorld(cx, cy);
-    const n = nodeHit(wx, wy);
-    if (n) {
-      if (pinNode === n) { pinNode = null; hidePanel(); }
-      else { pinNode = n; pinEdge = -1; showNodePanel(n); }
-    } else {
-      let found = -1;
-      for (let i = EDGES.length-1; i >= 0; i--) {
-        if (edgeHit(EDGES[i], wx, wy)) { found = EDGES[i].id; break; }
-      }
-      if (found >= 0) {
-        if (pinEdge === found) { pinEdge = -1; hidePanel(); }
-        else { pinEdge = found; pinNode = null; showEdgePanel(found); }
-      } else {
-        pinNode = null; pinEdge = -1; hidePanel();
-      }
+  // If mouse moved at all (drag or pan), never touch the panel
+  if (wasMoved) { draw(); return; }
+
+  // Pure click — open panel, but never close it (use X to close)
+  const {x:cx, y:cy} = canvasXY(e);
+  const {x:wx, y:wy} = toWorld(cx, cy);
+  const n = nodeHit(wx, wy);
+  if (n) {
+    pinNode = n; pinEdge = -1; showNodePanel(n);
+  } else {
+    let found = -1;
+    for (let i = EDGES.length-1; i >= 0; i--) {
+      if (edgeHit(EDGES[i], wx, wy)) { found = EDGES[i].id; break; }
     }
+    if (found >= 0) { pinEdge = found; pinNode = null; showEdgePanel(found); }
   }
   draw();
 });
